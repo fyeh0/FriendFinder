@@ -1,17 +1,13 @@
 const path = require("path");
+const friendArray = require("../data/friends")
 
 module.exports = function(app) {
-  var express = require("express");
-
-  var app = express();
-  var PORT = 3000;
-
   app.get("/api/friends", function(req, res) {
-    return res.json(friends);
+    res.json(friendArray);
   });
 
   app.post("/api/friends", function(req, res) {
-    var newfriend = req.body;
+    // var newfriend = req.body;
     // newcharacter.routeName = newcharacter.name
     //   .replace(/\s+/g, "")
     //   .toLowerCase();
