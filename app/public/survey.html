@@ -47,26 +47,26 @@
                 <h5>Question 1</h5>
                 <p>Life moves pretty fast. If you don’t stop and look around once in a while, you could miss it.</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question1" id="inlineRadio1" value="1" />
-                    <label class="form-check-label" for="inlineRadio1"> 1 (Stronly Disagree)</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question1" id="inlineRadio2" value="2" />
-                    <label class="form-check-label" for="inlineRadio2"> 2 (Disagree)</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question1" id="inlineRadio3" value="3" />
-                    <label class="form-check-label" for="inlineRadio3"> 3 (Neither agree nor disagree)</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question1" id="inlineRadio4" value="4" />
-                    <label class="form-check-label" for="inlineRadio4"> 4 (Agree)</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question1" id="inlineRadio5" value="5" />
-                    <label class="form-check-label" for="inlineRadio5"> 5 (Strongly agree)</label>
-                  </div>
-                </label>
+                  <input class="form-check-input" type="radio" name="question1" id="inlineRadio1" value="1" />
+                  <label class="form-check-label" for="inlineRadio1"> 1 (Stronly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="question1" id="inlineRadio2" value="2" />
+                  <label class="form-check-label" for="inlineRadio2"> 2 (Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="question1" id="inlineRadio3" value="3" />
+                  <label class="form-check-label" for="inlineRadio3"> 3 (Neither agree nor disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="question1" id="inlineRadio4" value="4" />
+                  <label class="form-check-label" for="inlineRadio4"> 4 (Agree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="question1" id="inlineRadio5" value="5" />
+                  <label class="form-check-label" for="inlineRadio5"> 5 (Strongly agree)</label>
+                </div>
+              </label>
 
               <label>
                 <h5>Question 2</h5>
@@ -120,7 +120,8 @@
 
               <label>
                 <h5>Question 4</h5>
-                <p>To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life.</p>
+                <p>To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each
+                  other and to feel. That is the purpose of life.</p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question4" id="inlineRadio1" value="1" />
                   <label class="form-check-label" for="inlineRadio1"> 1 (Stronly Disagree)</label>
@@ -145,7 +146,8 @@
 
               <label>
                 <h5>Question 5</h5>
-                <p>Words will always retain their power. Words offer the means to meaning, and for those who will listen, the enunciation of truth.</p>
+                <p>Words will always retain their power. Words offer the means to meaning, and for those who will
+                  listen, the enunciation of truth.</p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question5" id="inlineRadio1" value="1" />
                   <label class="form-check-label" for="inlineRadio1"> 1 (Stronly Disagree)</label>
@@ -246,7 +248,8 @@
 
               <label>
                 <h5>Question 9</h5>
-                <p>Nostalgia is denial...it's a flaw in the romantic imagination of those people who find it difficult to cope with the present.</p>
+                <p>Nostalgia is denial...it's a flaw in the romantic imagination of those people who find it difficult
+                  to cope with the present.</p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question9" id="inlineRadio1" value="1" />
                   <label class="form-check-label" for="inlineRadio1"> 1 (Stronly Disagree)</label>
@@ -331,7 +334,7 @@
           <p>Display friend match here</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">
             Close
           </button>
         </div>
@@ -359,16 +362,27 @@
       };
       console.log(newfriend);
 
-      $.post("/api/friends", newfriend), function(data) {
-        console.log(newfriend);
-      }
+      $.post("/api/friends", newfriend).then(function(data) {
+        console.log(data);
+      })
 
-
-      
-      // .then(function (data) {
-      //   console.log(newfriend);
-      //   alert("Adding your results...");
-      // });
+        // whyyyyyy doesn't this work
+      //   $("#closeModal").click(function () {
+      //       $("#name").val(""),
+      //       $("#photo").val(""),
+      //       $("#age").val(""),
+      //       [$("input[name=question1]:checked").prop("checked", false),
+      //       $("input[name=question2]:checked").val(""),
+      //       $("input[name=question3]:checked").val(""),
+      //       $("input[name=question4]:checked").val(""),
+      //       $("input[name=question5]:checked").val(""),
+      //       $("input[name=question6]:checked").val(""),
+      //       $("input[name=question7]:checked").val(""),
+      //       $("input[name=question8]:checked").val(""),
+      //       $("input[name=question9]:checked").val(""),
+      //       $("input[name=question10]:checked").val("")]
+      //   })
+      // }
     });
   </script>
 </body>
