@@ -7,12 +7,14 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(req, res) {
+    console.log(friendArray);
+
+
     // var newfriend = req.body;
     // newcharacter.routeName = newcharacter.name
     //   .replace(/\s+/g, "")
     //   .toLowerCase();
-    console.log(newfriend);
-    friendArray.push(newfriend);
-    res.json(friend);
+    // friendArray.push(newfriend);
+    // res.json(friend);
   });
 };
