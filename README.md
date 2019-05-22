@@ -6,5 +6,5 @@ FriendFinder is a compatibility application built with Node and Express servers.
 
 ### Links
 
-[Github](link)
+[Github](https://fyeh0.github.io/FriendFinder/)
 [Heroku](link)
