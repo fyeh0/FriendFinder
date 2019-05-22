@@ -331,7 +331,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Display friend match here</p>
+          <h3 id="matchName"></h3>
+          <img id="matchImage" src=""> 
         </div>
         <div class="modal-footer">
           <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">
@@ -360,11 +361,14 @@
         $("input[name=question9]:checked").val(),
         $("input[name=question10]:checked").val()]
       };
-      console.log(newfriend);
+      // console.log(newfriend);
 
-      $.post("/api/friends", newfriend).then(function(data) {
-        console.log(data);
+      $.post("/api/friends", newfriend).then(function (data) {
+        console.log(newfriend);
+        $("#matchName").text(data.name);
+        $("#matchImage").attr("src", data.photo);
       })
+    });
 
         // whyyyyyy doesn't this work
       //   $("#closeModal").click(function () {
@@ -383,7 +387,6 @@
       //       $("input[name=question10]:checked").val("")]
       //   })
       // }
-    });
   </script>
 </body>
 
